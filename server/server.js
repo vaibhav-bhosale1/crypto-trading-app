@@ -16,6 +16,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/trade_sync_
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/notes', require('./routes/notes')); 
 
 // Basic Route
 app.get('/', (req, res) => {
