@@ -51,7 +51,43 @@ const LandingPage = ({ onNavigate }) => (
         <p className="text-xl text-zinc-500 max-w-lg">Track trades, manage entities, and scale your portfolio with meaningful data.</p>
         <Button onClick={() => onNavigate('register')} className="h-12 px-8 text-base">Start Trading Now <ArrowRight className="w-4 h-4 ml-2" /></Button>
       </div>
-      <Card className="hidden lg:block h-80 flex items-center justify-center text-zinc-500 border-dashed">Interactive Preview</Card>
+     
+       {/* Abstract Hero Graphic */}
+          <div className="relative">
+            <div className="absolute -inset-4 bg-zinc-800/20 rounded-full blur-3xl"></div>
+            <Card className="relative bg-zinc-950/80 border-zinc-800">
+              <div className="space-y-6">
+                <div className="flex justify-between items-center border-b border-zinc-800 pb-4">
+                  <div className="space-y-1">
+                    <p className="text-xs font-semibold text-zinc-500 uppercase">Current Balance</p>
+                    <p className="text-2xl font-bold">$124,592.00</p>
+                  </div>
+                  <div className="px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-xs font-medium">
+                    +2.4%
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-zinc-900/50 hover:bg-zinc-900 transition-colors cursor-pointer">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center ${i === 1 ? 'bg-orange-500/10 text-orange-500' : 'bg-blue-500/10 text-blue-500'}`}>
+                          {i === 1 ? 'BTC' : 'ETH'}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-zinc-200">{i === 1 ? 'Bitcoin' : 'Ethereum'}</p>
+                          <p className="text-xs text-zinc-500">Long Position</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm font-medium text-zinc-200">+{i * 12}.5%</p>
+                        <p className="text-xs text-zinc-500">Just now</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
+          </div>
     </main>
   </div>
 );
