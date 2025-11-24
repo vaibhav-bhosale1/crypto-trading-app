@@ -3,7 +3,7 @@ import {
   LayoutDashboard, ArrowRight, Lock, User, BarChart3, ShieldCheck, Zap, Menu, X, ChevronRight, Database, Loader2, Plus, Trash2, Edit2, TrendingUp, TrendingDown 
 } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://crypto-trading-app-mp5i.onrender.com/api';
 
 // --- UI COMPONENTS ---
 const Button = ({ children, variant = 'primary', className = '', onClick, type = "button", disabled }) => {
