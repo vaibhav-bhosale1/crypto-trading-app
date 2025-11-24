@@ -14,6 +14,14 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/trade_sync_
   .then(() => console.log('✅ MongoDB Connected Successfully'))
   .catch((err) => console.error('❌ MongoDB Connection Error:', err));
 
+
+  app.use(cors({
+  origin: "https://crypto-trading-app-beige.vercel.app",
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
+
+
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/notes', require('./routes/notes')); 
